@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Burger Mela – Big Burgers. Bigger Happiness.</title>
+  <meta name="description" content="Burger Mela Jodhpur – Juicy patties, fresh ingredients, unforgettable taste. Order on WhatsApp, Swiggy or Zomato."/>
+  <meta name="keywords" content="burger mela jodhpur, best burger jodhpur, order burger online, swiggy zomato jodhpur burger"/>
+  <meta property="og:title" content="Burger Mela – Big Burgers. Bigger Happiness."/>
+  <meta property="og:description" content="Jodhpur's favourite burger joint. Flame grilled, fast delivery."/>
+  <meta property="og:type" content="restaurant"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<header class="navbar" id="navbar">
+  <a href="#home" class="nav-logo">
+    <img src="images/burgermela_logo.png" alt="Burger Mela Logo" class="nav-logo-img"/>
+  </a>
+
+  <nav class="nav-menu">
+    <a href="#home"    class="nm-link active">Home</a>
+    <a href="#menu"    class="nm-link">Menu</a>
+    <a href="#order"   class="nm-link">Order</a>
+    <a href="#about"   class="nm-link">About Us</a>
+    <a href="#contact" class="nm-link">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <button class="icon-btn" onclick="openModal()" title="View Menu"><i class="fas fa-utensils"></i></button>
+    <button class="burger-btn" id="burgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer-bg" id="drawerBg"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose"><i class="fas fa-times"></i></button>
+  <a href="#home"    class="d-link">Home</a>
+  <a href="#menu"    class="d-link">Menu</a>
+  <a href="#order"   class="d-link">Order</a>
+  <a href="#about"   class="d-link">About Us</a>
+  <a href="#contact" class="d-link">Contact</a>
+  <div class="drawer-btns">
+    <a href="https://wa.me/917568521210" target="_blank" class="btn-red"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="tel:+917568521210" class="btn-dark"><i class="fas fa-phone"></i> Call Now</a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     HERO  — exact match to reference image
+════════════════════════════════════════ -->
+<section class="hero" id="home">
+
+  <!-- faint watermark "100% FRESH" in centre -->
+  <div class="hero-wm" aria-hidden="true">
+    <span>100%</span>
+    <span>FRESH</span>
+  </div>
+
+  <!-- squiggly lines decoration (SVG) -->
+  <svg class="hero-squig" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M30 10 Q38 20 30 30 Q22 40 30 50 Q38 60 30 70" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".35"/>
+    <path d="M42 14 Q50 24 42 34 Q34 44 42 54" stroke="#111" stroke-width="2" stroke-linecap="round" fill="none" opacity=".20"/>
+  </svg>
+
+  <!-- LEFT: text -->
+  <div class="hero-text fade-up">
+    <span class="hero-tag">Big Burgers. Bigger Happiness.</span>
+    <h1 class="hero-h1">
+      BURGERS<br>
+      <span>THAT HIT<br>DIFFERENT.</span>
+    </h1>
+    <p class="hero-sub">Juicy patties. Fresh ingredients.<br>Unforgettable taste.</p>
+    <div class="hero-actions">
+      <button class="btn-red" onclick="openOrderModal()">ORDER NOW <i class="fas fa-arrow-right"></i></button>
+      <button class="btn-ghost" onclick="openModal()">
+        <span class="play-ring"><i class="fas fa-play"></i></span>
+        VIEW MENU
+      </button>
+    </div>
+  </div>
+
+  <!-- RIGHT: burger image -->
+  <div class="hero-img-wrap fade-up" style="animation-delay:.15s">
+    <img src="images/hero-bg.png" alt="Burger Mela signature burger with fries and cold drink" class="hero-img"/>
+    <!-- 100% Quality badge -->
+    <div class="quality-badge">
+      <span class="qb-top">PREMIUM</span>
+      <span class="qb-mid">100%</span>
+      <span class="qb-bot">QUALITY</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════
+     FEATURE BAR
+════════════════════════════════════════ -->
+<div class="feat-bar">
+  <div class="feat-bar-inner">
+    <div class="feat-item">
+      <i class="fas fa-burger feat-ico"></i>
+      <div><strong>100%</strong><span>FRESH INGREDIENTS</span></div>
+    </div>
+    <div class="feat-item">
+      <i class="fas fa-fire feat-ico"></i>
+      <div><strong>FLAME</strong><span>GRILLED</span></div>
+    </div>
+    <div class="feat-item">
+      <i class="fas fa-motorcycle feat-ico"></i>
+      <div><strong>FAST</strong><span>DELIVERY</span></div>
+    </div>
+    <div class="feat-item">
+      <i class="fas fa-award feat-ico"></i>
+      <div><strong>BEST QUALITY</strong><span>EVERY TIME</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     MENU SECTION
+════════════════════════════════════════ -->
+<section class="sec-menu" id="menu">
+
+  <div class="sec-head fade-up">
+    <div>
+      <span class="sec-tag">What We Serve</span>
+      <h2 class="sec-title">Our <em>Popular</em> Items</h2>
+      <p class="sec-sub">Handcrafted with love, served hot — explore our most-loved bites.</p>
+    </div>
+    <button class="btn-red" onclick="openModal()">Full Menu <i class="fas fa-arrow-right"></i></button>
+  </div>
+
+  <!-- Category pills -->
+  <div class="cat-pills fade-up">
+    <button class="cat-pill active" data-cat="all">All</button>
+    <button class="cat-pill" data-cat="burger">Burgers</button>
+    <button class="cat-pill" data-cat="pizza">Pizzas</button>
+    <button class="cat-pill" data-cat="sandwich">Sandwiches</button>
+    <button class="cat-pill" data-cat="sides">Sides &amp; Fries</button>
+    <button class="cat-pill" data-cat="drinks">Beverages</button>
+    <button class="cat-pill" data-cat="momos">Momos</button>
+  </div>
+
+  <!-- Cards injected by JS -->
+  <div class="menu-grid" id="menuGrid"></div>
+
+</section>
+
+<!-- ════════════════════════════════════════
+     ORDER SECTION
+════════════════════════════════════════ -->
+<section class="sec-order" id="order">
+  <div class="order-wrap">
+
+    <!-- Left: order methods -->
+    <div class="order-methods fade-up">
+      <span class="sec-tag" style="color:#f97777">Order Your Way</span>
+      <h2 class="sec-title" style="color:#fff">Ready to <em>Eat?</em></h2>
+      <p class="sec-sub" style="color:#aaa">Pick how you want to order.</p>
+
+      <div class="om-list">
+        <a href="https://wa.me/917568521210?text=Hi%20Burger%20Mela!%20I%20want%20to%20place%20an%20order." target="_blank" class="om-item">
+          <span class="om-icon wa"><i class="fab fa-whatsapp"></i></span>
+          <span class="om-txt"><strong>Order on WhatsApp</strong><small>Chat to place your order</small></span>
+          <i class="fas fa-arrow-right om-arr"></i>
+        </a>
+        <a href="tel:+917568521210" class="om-item">
+          <span class="om-icon call"><i class="fas fa-phone"></i></span>
+          <span class="om-txt"><strong>Call: 7568521210</strong><small>Speak to us directly</small></span>
+          <i class="fas fa-arrow-right om-arr"></i>
+        </a>
+        <a href="https://www.swiggy.com/city/jodhpur/burger-mela-shikargarh-new-jodhpur-rest1214893" target="_blank" class="om-item">
+          <span class="om-icon swi"><i class="fas fa-motorcycle"></i></span>
+          <span class="om-txt"><strong>Order on Swiggy</strong><small>Fast delivery via Swiggy</small></span>
+          <i class="fas fa-arrow-right om-arr"></i>
+        </a>
+        <a href="https://www.zomato.com/jodhpur/burger-mela-cantt-area/order" target="_blank" class="om-item">
+          <span class="om-icon zom"><i class="fas fa-utensils"></i></span>
+          <span class="om-txt"><strong>Order on Zomato</strong><small>Order via Zomato</small></span>
+          <i class="fas fa-arrow-right om-arr"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: quick booking form -->
+    <div class="order-form fade-up" style="animation-delay:.18s">
+      <h3>📝 Book Your Order</h3>
+      <p>Fill in details — we'll confirm on WhatsApp.</p>
+      <div class="fg"><label>Name *</label><input id="fName" type="text" placeholder="Your name"/></div>
+      <div class="fg"><label>Phone *</label><input id="fPhone" type="tel" placeholder="10-digit mobile number"/></div>
+      <div class="fg"><label>What to order? *</label><input id="fItem" type="text" placeholder="e.g. 2 Peri Peri Burger, 1 Fries"/></div>
+      <div class="fg"><label>Delivery address</label><textarea id="fAddr" placeholder="Your address in Jodhpur..."></textarea></div>
+      <div class="fg"><label>Special instructions</label><input id="fNote" type="text" placeholder="e.g. Extra cheese, no onion"/></div>
+      <button class="btn-submit" onclick="sendOrder()"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════ -->
+<section class="sec-about" id="about">
+  <div class="about-wrap">
+    <div class="about-img-col fade-up">
+      <img src="images/about-burger.png" alt="Burger Mela burger on wooden board"/>
+      <div class="about-badge"><span class="ab-num">500+</span><span class="ab-lbl">Happy Customers Daily</span></div>
+    </div>
+    <div class="about-txt-col fade-up" style="animation-delay:.15s">
+      <span class="sec-tag">Our Story</span>
+      <h2 class="sec-title">Jodhpur's <em>Favourite</em> Burger Joint</h2>
+      <p class="sec-sub">Born in the Blue City, Burger Mela was built on one belief — everyone deserves a burger that hits different. We use fresh, locally sourced ingredients, flame-grill every patty to perfection, and serve with love.</p>
+      <div class="about-grid">
+        <div class="ab-item"><span class="ab-ico"><i class="fas fa-leaf"></i></span><div><strong>Fresh Ingredients</strong><small>Sourced daily</small></div></div>
+        <div class="ab-item"><span class="ab-ico"><i class="fas fa-fire"></i></span><div><strong>Flame Grilled</strong><small>Perfect char</small></div></div>
+        <div class="ab-item"><span class="ab-ico"><i class="fas fa-motorcycle"></i></span><div><strong>Fast Delivery</strong><small>Hot to your door</small></div></div>
+        <div class="ab-item"><span class="ab-ico"><i class="fas fa-star"></i></span><div><strong>Top Rated</strong><small>Swiggy &amp; Zomato</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     REVIEWS
+════════════════════════════════════════ -->
+<section class="sec-reviews" id="reviews">
+  <div class="rev-head fade-up">
+    <span class="sec-tag">What People Say</span>
+    <h2 class="sec-title">Customer <em>Reviews</em></h2>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card fade-up">
+      <div class="rev-stars">★★★★★</div>
+      <p>"Best burger I've had in Jodhpur! The Peri Peri Cheese Burger is absolutely fire. Fresh, perfectly grilled — will keep coming back!"</p>
+      <div class="rev-auth"><div class="rev-av">R</div><div><strong>Rahul M.</strong><small>Cantt Area, Jodhpur</small></div></div>
+    </div>
+    <div class="rev-card fade-up" style="animation-delay:.1s">
+      <div class="rev-stars">★★★★★</div>
+      <p>"Double Decker Burger is a game-changer! Ordered via Swiggy — arrived hot and fresh. Amazing value for money!"</p>
+      <div class="rev-auth"><div class="rev-av">P</div><div><strong>Priya S.</strong><small>New Jodhpur</small></div></div>
+    </div>
+    <div class="rev-card fade-up" style="animation-delay:.2s">
+      <div class="rev-stars">★★★★★</div>
+      <p>"Our go-to every weekend! Tikha Paneer Burger + Peri Peri fries is the best combo. Service is always fast!"</p>
+      <div class="rev-auth"><div class="rev-av">A</div><div><strong>Arjun K.</strong><small>Shikargarh, Jodhpur</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CONTACT + MAP
+════════════════════════════════════════ -->
+<section class="sec-contact" id="contact">
+  <div class="contact-head fade-up">
+    <span class="sec-tag">Find Us</span>
+    <h2 class="sec-title">Visit <em>Burger Mela</em></h2>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-card fade-up">
+      <h3>Get In Touch</h3>
+      <div class="ci"><span class="ci-ico"><i class="fas fa-map-marker-alt"></i></span><div><strong>Locations</strong><small>Cantt Area, Jodhpur<br>Shikargarh, New Jodhpur</small></div></div>
+      <div class="ci"><span class="ci-ico"><i class="fas fa-phone"></i></span><div><strong>Phone / WhatsApp</strong><a href="tel:+917568521210">+91 75685 21210</a></div></div>
+      <div class="ci"><span class="ci-ico"><i class="fas fa-clock"></i></span><div><strong>Hours</strong><small>Daily: 11 AM – 11 PM</small></div></div>
+      <div class="contact-btns">
+        <a href="https://wa.me/917568521210" target="_blank" class="btn-red"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.swiggy.com/city/jodhpur/burger-mela-shikargarh-new-jodhpur-rest1214893" target="_blank" class="btn-swi">🧡 Swiggy</a>
+        <a href="https://www.zomato.com/jodhpur/burger-mela-cantt-area/order" target="_blank" class="btn-zom">❤️ Zomato</a>
+      </div>
+    </div>
+    <div class="map-box fade-up" style="animation-delay:.15s">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57189.81!2d73.02!3d26.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c4702f4f7dd%3A0x99213f69b8dac5db!2sBurger%20Mela!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" title="Burger Mela on Google Maps"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <div class="foot-logo"><span>BURGER</span><span>✦ MELA ✦</span></div>
+      <p>Jodhpur's favourite burger joint — big burgers, bigger happiness.</p>
+      <div class="foot-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/917568521210" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#order">Order Now</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h4>Order Online</h4>
+      <a href="https://wa.me/917568521210" target="_blank">WhatsApp Order</a>
+      <a href="tel:+917568521210">Call to Order</a>
+      <a href="https://www.swiggy.com/city/jodhpur/burger-mela-shikargarh-new-jodhpur-rest1214893" target="_blank">Swiggy</a>
+      <a href="https://www.zomato.com/jodhpur/burger-mela-cantt-area/order" target="_blank">Zomato</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <span><i class="fas fa-map-marker-alt" style="color:#D62B2B;margin-right:6px"></i>Cantt Area &amp; Shikargarh, Jodhpur</span>
+      <span><i class="fas fa-phone" style="color:#D62B2B;margin-right:6px"></i>+91 75685 21210</span>
+      <span><i class="fas fa-clock" style="color:#D62B2B;margin-right:6px"></i>Daily 11 AM – 11 PM</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2025 Burger Mela. All rights reserved.</span>
+    <span>Made with ❤️ in Jodhpur</span>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════
+     FLOATING BUTTONS  (bottom-right) — always visible
+════════════════════════════════════════ -->
+<div class="fab-stack">
+  <!-- WhatsApp -->
+  <div class="fab-item">
+    <span class="fab-label">WhatsApp</span>
+    <a href="https://wa.me/917568521210?text=Hi%20%F0%9F%91%8B%20I%20would%20like%20to%20place%20an%20order.%20Please%20confirm%20the%20availability%20%F0%9F%98%8A" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+  <!-- Call -->
+  <div class="fab-item">
+    <span class="fab-label">Call Us</span>
+    <a href="tel:+917568521210" class="fab-btn fab-call" aria-label="Call Us">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+  <!-- Swiggy -->
+  <div class="fab-item">
+    <span class="fab-label">Swiggy</span>
+    <a href="https://www.swiggy.com/city/jodhpur/burger-mela-shikargarh-new-jodhpur-rest1214893" target="_blank" class="fab-btn fab-swi" aria-label="Swiggy">
+      <img src="images/swiggy-logo.png" alt="Swiggy" class="fab-logo-img"/>
+    </a>
+  </div>
+  <!-- Zomato -->
+  <div class="fab-item">
+    <span class="fab-label">Zomato</span>
+    <a href="https://www.zomato.com/jodhpur/burger-mela-cantt-area/order" target="_blank" class="fab-btn fab-zom" aria-label="Zomato">
+      <img src="images/zomato-logo.png" alt="Zomato" class="fab-logo-img"/>
+    </a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ORDER NOW MODAL
+════════════════════════════════════════ -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal-box order-modal-box">
+    <div class="modal-hd">
+      <h2>🍔 How do you want to order?</h2>
+      <button onclick="closeOrderModal()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="order-modal-grid">
+      <a href="tel:+917568521210" class="om-card om-card-call">
+        <div class="om-card-icon"><i class="fas fa-phone"></i></div>
+        <span class="om-card-title">Call &amp; Order</span>
+        <span class="om-card-sub">+91 75685 21210</span>
+      </a>
+      <a href="https://wa.me/917568521210?text=Hi%20%F0%9F%91%8B%20I%20would%20like%20to%20place%20an%20order.%20Please%20confirm%20the%20availability%20%F0%9F%98%8A" target="_blank" class="om-card om-card-wa">
+        <div class="om-card-icon"><i class="fab fa-whatsapp"></i></div>
+        <span class="om-card-title">WhatsApp</span>
+        <span class="om-card-sub">Chat to order</span>
+      </a>
+      <a href="https://www.swiggy.com/city/jodhpur/burger-mela-shikargarh-new-jodhpur-rest1214893" target="_blank" class="om-card om-card-swi">
+        <div class="om-card-icon om-card-logo"><img src="images/swiggy-logo.png" alt="Swiggy"/></div>
+        <span class="om-card-title">Swiggy</span>
+        <span class="om-card-sub">Fast delivery</span>
+      </a>
+      <a href="https://www.zomato.com/jodhpur/burger-mela-cantt-area/order" target="_blank" class="om-card om-card-zom">
+        <div class="om-card-icon om-card-logo"><img src="images/zomato-logo.png" alt="Zomato"/></div>
+        <span class="om-card-title">Zomato</span>
+        <span class="om-card-sub">Order online</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     MENU MODAL
+════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <div class="modal-hd">
+      <h2>🍔 Burger Mela — Full Menu</h2>
+      <button onclick="closeModal()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-bd">
+      <img src="images/menu-card.png" alt="Full Menu"/>
+      <div class="modal-btns">
+        <a href="https://wa.me/917568521210?text=Hi%20Burger%20Mela!%20I%20want%20to%20place%20an%20order." target="_blank" class="btn-red"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.swiggy.com/city/jodhpur/burger-mela-shikargarh-new-jodhpur-rest1214893" target="_blank" class="btn-swi">🧡 Swiggy</a>
+        <a href="https://www.zomato.com/jodhpur/burger-mela-cantt-area/order" target="_blank" class="btn-zom">❤️ Zomato</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+<!-- Scroll top -->
+<button class="scr-top" id="scrTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="js/app.js"></script>
+</body>
+</html>
